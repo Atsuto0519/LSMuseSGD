@@ -1,0 +1,6 @@
+numpy
+sklearn
+
+pep8
+pytest
+pytest-pep8

@@ -1,0 +1,15 @@
+language: python
+
+python:
+- '3.6'
+
+install:
+- pip install -r requirements.txt
+
+script:
+- pytest --pep8 Python/LSM_likely_Chainer.py
+- pytest --pep8 Python/train_LSM_with_SGD.py
+
+notifications:
+  slack:
+    secure: h7CcO7KfB4I0iDDb5uJvdkQgQN8JLEYuZERunYZnUmRYHXu5MMPA8QK5p2ERlBYcEQkJ8E6chuDlEKQ5WVPs7mH52GJkIml6CALbXUO0Nz/yEPaPaFE9ZceSvAbAL9RUiv9zrRp3FkPIb7N4ub3zirSNI4zUfDHnkkqHAdnLjBLtFgmSNWx59B6TuaSpsCNi9UKCeLUL2igCLFEx8RASHlR9CBjV3NvdD/+uzOmIMS/sEdhCZWQV7Jg8zvWpil0OwFLQ2at7AA7KWywwhz5IAW/UqDcbgZgHrAYX204dP30g05zx5nGcC5bznGT4arEzEuFKEZB2GDTm/M7RaCn0vqU82XFw+cgFj+0O7XteSlJE3QPGJPCL+FKwGk5dtPBaccV5ACMFXQZgNUAHK8mYVSyxzMw3Z4DizhLrbsxF+89FhId1hOFESjZ7T/h6HpMP8kmU7UKsU5Ry+l0Eh2OBibFMlgMxzFQY88NM5dRxqqC6cYYcRuwI8hsxTXnLuJ+k1g2BADGO8sTvbwe1Gvj87Bmf/s8vpMF86/YY1omxJm+LYpzyEhnOn3qqE7EdAxFmbMhFu8IV6i7eYQ6w4M85jjCiFTKKjGscLfV5ZiHSNyNKJMEoCZxHsNNkypIev2/1JOuSa+QCRG0fXdxV2kCNYdtGJ9IUM2EZi+CXWxzWQ+o=
