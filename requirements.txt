@@ -1,5 +1,6 @@
 numpy
 sklearn
+matplotlib
 
 pep8
 pytest
