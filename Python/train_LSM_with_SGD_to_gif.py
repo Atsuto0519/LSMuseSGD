@@ -55,7 +55,8 @@ for ep in range(epoch):
         ax.scatter(train_x, train_y, color="RED")
         ax.plot(plot_x, plot_y, color="BLUE")
         line = ax.plot(plot_x, pred_y, color="GREEN")
-        title = ax.text(0.5, 1.01,
+        title = ax.text(
+                0.5, 1.01,
                 "learning rate = {}, {} epoch score".format(alpha, ep + 1),
                 transform=ax.transAxes, ha="center")
 
