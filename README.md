@@ -1,5 +1,4 @@
-# LSMuseSGD
-[![Build Status](https://travis-ci.com/Atsuto0519/LSMuseSGD.svg?branch=master)](https://travis-ci.com/Atsuto0519/LSMuseSGD)
+# LSMuseSGD [![Build Status](https://travis-ci.com/Atsuto0519/LSMuseSGD.svg?branch=master)](https://travis-ci.com/Atsuto0519/LSMuseSGD)
 
 確率的勾配降下法(SGD)を使って最小二乗法を実装した．
 
