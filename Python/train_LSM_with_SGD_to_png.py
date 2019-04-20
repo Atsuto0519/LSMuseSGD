@@ -50,4 +50,4 @@ plt.plot(plot_x, y_plot,
 plt.ylim([-5, 5])
 plt.legend()
 plt.title("learning rate = "+str(alpha))
-plt.savefig("dim"+str(dim)+".png")
+plt.savefig("images/dim"+str(dim)+".png")
