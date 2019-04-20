@@ -56,8 +56,8 @@ for ep in range(epoch):
         ax.plot(plot_x, plot_y, color="BLUE")
         line = ax.plot(plot_x, pred_y, color="GREEN")
         title = ax.text(0.5, 1.01,
-                ("learning rate = " + str(alpha) +
-                 ", " + str(ep+1) + " epoch score"),
+                "learning rate = " + str(alpha) +
+                ", " + str(ep+1) + " epoch score",
                 transform=ax.transAxes, ha="center")
 
     artists.append(line + [title])
