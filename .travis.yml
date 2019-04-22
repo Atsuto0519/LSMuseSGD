@@ -7,8 +7,8 @@ install:
 - pip install -r requirements.txt
 
 script:
-- pytest --pep8 Python/LSM_likely_Chainer.py
-- pytest --pep8 Python/optimizers.py
+- pytest --pep8 Python/likely_chainer/models.py
+- pytest --pep8 Python/likely_chainer/optimizers.py
 - pytest --pep8 Python/train_LSM_with_SGD_to_png.py
 - pytest --pep8 Python/train_LSM_with_SGD_to_gif.py
 
