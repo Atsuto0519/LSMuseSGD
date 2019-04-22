@@ -1,24 +1,7 @@
 import numpy
 
 
-class SGD():
-    """
-    chainerのSGD風に使える最適化関数．
-    """
-    def __init__(self):
-        self.optimizer = None
-
-    def setup(self, model):
-        if self.optimizer is None:
-            self.model = model
-        else:
-            print("Please set model.")
-
-    def update(self):
-        self.model.w += self.model.learning_rate * self.model.grads
-
-
-class LeastSquaresMethod():
+class LSM():
     """
     chainerのモデル風に使えるモデル．
     """
@@ -55,6 +38,18 @@ class LeastSquaresMethod():
         return scores
 
     def zerograds(self):
+        attr_self = [i for i in dir(self) if "__" not in i]
+        if "x" in attr_self:
+            del self.x
+        if "y" in attr_self:
+            del self.y
+        if "X" in attr_self:
+            del self.X
+        if "data" in attr_self:
+            del self.data
+        if "error" in attr_self:
+            del self.error
+
         self.grads = numpy.zeros([self.dimension])
 
     def backward(self):

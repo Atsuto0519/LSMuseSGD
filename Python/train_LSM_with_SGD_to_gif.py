@@ -2,7 +2,8 @@ import numpy
 import matplotlib.animation as animation
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-from LSM_likely_Chainer import LeastSquaresMethod, SGD
+import likely_chainer.models
+import likely_chainer.optimizers
 
 
 # シード値固定
@@ -12,8 +13,8 @@ numpy.random.seed(seed=10)
 dim = 2
 alpha = 0.02
 epoch = 100
-model = LeastSquaresMethod(dimension=dim, learning_rate=alpha)
-optimizer = SGD()
+model = likely_chainer.models.LSM(dimension=dim, learning_rate=alpha)
+optimizer = likely_chainer.optimizers.SGD()
 optimizer.setup(model)
 
 # とりあえずランダムな重みのときをプロットしてみる

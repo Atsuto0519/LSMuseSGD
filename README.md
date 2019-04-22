@@ -14,17 +14,25 @@ PythonはChainerによく似たライブラリを用意したので[LSM_likely_C
 ### Define model and training
 
 ```Python
-from LSM_likely_Chainer import LeastSquaresMethod, SGD
+import likely_chainer.models
+import likely_chainer.optimizers
 
-dim = n
+# Define parameter
+dim = 2
 alpha = 0.01
-model = LeastSquaresMethod(dimension=dim, learning_rate=alpha)
-optimizer = SGD()
+epoch = 1000
+model = likely_chainer.models.LSM(dimension=dim, learning_rate=alpha)
+optimizer = likely_chainer.optimizers.SGD()
 optimizer.setup(model)
 
-for (x, y) in zip(train_x, train_y):
-    model.zerograds()
-    loss = model([x], [y])
-    loss.backward()
-    optimizer.update()
+# This looks like chainer ...
+for ep in range(epoch):
+  for (x, y) in zip(train_x, train_y):
+      model.zerograds()
+      loss = model(x, y)
+      loss.backward()
+      optimizer.update()
+
+# Predict data from test_x
+pred_y = model(test_x).data
 ```
