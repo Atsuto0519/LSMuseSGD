@@ -18,7 +18,7 @@ class LSM():
         elif (len(args) > 0):
             # ただのスコア計算なら
             self.x = numpy.array(args[0])
-            self.data = self.score()
+            self.data = self.__score__()
             # 学習するなら
             if (len(args) > 1):
                 self.y = numpy.array(args[1])
@@ -26,7 +26,7 @@ class LSM():
 
         return self
 
-    def score(self):
+    def __score__(self):
         """
         データ点を入れたときのyの推定値．
         """
