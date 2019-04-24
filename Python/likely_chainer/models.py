@@ -30,9 +30,9 @@ class LSM():
         """
         データ点を入れたときのyの推定値．
         """
-        self.X = numpy.array([(x ** numpy.ones([self.dimension + 1]))[::-1]
+        self.X = numpy.array([(x ** numpy.ones([self.dimension + 1]))
                               for x in self.x])
-        self.X = self.X ** numpy.arange(self.dimension + 1)[::-1]
+        self.X = self.X ** numpy.arange(self.dimension + 1)
         scores = numpy.dot(self.X, self.w)
 
         return scores
