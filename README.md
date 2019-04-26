@@ -22,6 +22,9 @@ dim = 2
 alpha = 0.01
 epoch = 1000
 model = likely_chainer.models.LSM(dimension=dim, learning_rate=alpha)
+# If you want define by run ...
+model = likely_chainer.models.LSM(dimension=dim, learning_rate=alpha, define_by_run=True)
+
 optimizer = likely_chainer.optimizers.SGD()
 optimizer.setup(model)
 
