@@ -5,7 +5,7 @@ import chainer.functions as F
 
 
 def func_y(w, x, dim):
-    pred_y = sum([F.matmul(x ** d, w[d].reshape(1)) for d in range(dim + 1)])
+    pred_y = sum([w[d] * (x ** d) for d in range(dim + 1)])
     return pred_y.reshape(pred_y.shape[0])
 
 
@@ -26,8 +26,11 @@ class LSM():
             self.w = numpy.random.randn(self.dimension + 1)
             self.w = self.w.astype(numpy.float32)
             self.w = Variable(self.w.reshape(self.dimension + 1))
-            self.w.zerograd()
-            self.grads = self.w.grad.reshape(self.dimension + 1)
+            self.w.cleargrad()
+            if self.w.grad is None:
+                self.grads = numpy.zeros([self.dimension + 1])
+            else:
+                self.grads = self.w.grad.reshape(self.dimension + 1)
         else:
             self.w = numpy.random.randn(self.dimension + 1)
             self.grads = numpy.zeros([self.dimension + 1])
@@ -84,8 +87,11 @@ class LSM():
             del self.error
 
         if self.define_by_run:
-            self.w.zerograd()
-            self.grads = self.w.grad.reshape(self.dimension + 1)
+            self.w.cleargrad()
+            if self.w.grad is None:
+                self.grads = numpy.zeros([self.dimension + 1])
+            else:
+                self.grads = self.w.grad.reshape(self.dimension + 1)
         else:
             self.grads = numpy.zeros([self.dimension + 1])
 
