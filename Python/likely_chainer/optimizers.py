@@ -15,4 +15,7 @@ class SGD():
             print("Please set model.")
 
     def update(self):
-        self.model.w += self.model.learning_rate * self.model.grads
+        if self.model.define_by_run:
+            self.model.w.data += self.model.learning_rate * self.model.grads
+        else:
+            self.model.w += self.model.learning_rate * self.model.grads

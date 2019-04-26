@@ -11,6 +11,7 @@ script:
 - pytest --pep8 Python/likely_chainer/optimizers.py
 - pytest --pep8 Python/train_LSM_with_SGD_to_png.py
 - pytest --pep8 Python/train_LSM_with_SGD_to_gif.py
+- pytest --pep8 Python/train_LSM_with_SGD_to_png_using_chainer.py
 
 notifications:
   slack:
