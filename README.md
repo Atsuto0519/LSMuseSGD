@@ -2,6 +2,11 @@
 
 確率的勾配降下法(SGD)を使って最小二乗法を実装した．
 
+# Demo
+
+アニメーションを使って学習する様子
+![alt](./images/anim.gif)
+
 
 # Usage
 
@@ -13,7 +18,7 @@ PythonはChainerによく似たライブラリを用意したので[LSM_likely_C
 
 ### Define model and training
 
-```Python
+~~~Python
 import likely_chainer.models
 import likely_chainer.optimizers
 
@@ -38,4 +43,4 @@ for ep in range(epoch):
 
 # Predict data from test_x
 pred_y = model(test_x).data
-```
+~~~
